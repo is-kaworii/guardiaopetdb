@@ -3,15 +3,15 @@ require('dotenv').config()
 
 const express = require('express')
 const cors = require('cors')
+const routes = require('./routers/routes')
 const app = express()
 
 // implementando dependencias
 app.use(cors())
 app.use(express.json())
 
-
 // routes
-
+app.use('/api', routes)
 
 // start up server
 app.listen(process.env.PORT, () => {
