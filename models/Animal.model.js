@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 
-const animalSchema = new mongoose.Schema(
+const { Schema } = mongoose;
+
+const animalSchema = new Schema(
     {
         image: {
             type: String,
@@ -23,7 +25,7 @@ const animalSchema = new mongoose.Schema(
             required: true
         },
         size: {
-            type: Number,
+            type: String,
             required: true
         },
         description: {
@@ -31,7 +33,7 @@ const animalSchema = new mongoose.Schema(
             required: true
         },
         tags: {
-            type: String,
+            type: Array,
             required: true
         },
         estate: {
