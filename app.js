@@ -19,10 +19,6 @@ app.use(express.json());
 // Database conection
 conn();
 
-// implementando dependencias
-app.use(cors());
-app.use(express.json());
-
 // routes
 app.use('/api', routes);
 
