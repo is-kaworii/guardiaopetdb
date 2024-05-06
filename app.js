@@ -6,6 +6,16 @@ const routes = require('./routers/routes');
 const conn = require('./database/conn');
 const app = express();
 
+// implementando dependencias
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*')
+    res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE')
+    app.use(cors());
+    next()
+})
+
+app.use(express.json());
+
 // Database conection
 conn();
 
